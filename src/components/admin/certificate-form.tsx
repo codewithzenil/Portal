@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useOptimistic } from 'react';
+import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { createCertificate, updateCertificate, type FormState } from '@/lib/actions';
 import type { Certificate } from '@/lib/definitions';

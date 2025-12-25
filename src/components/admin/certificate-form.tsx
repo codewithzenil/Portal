@@ -1,6 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { createCertificate, updateCertificate, type FormState } from '@/lib/actions';
 import type { Certificate } from '@/lib/definitions';
 import { Label } from '@/components/ui/label';
@@ -33,7 +34,7 @@ export function CertificateForm({ certificate }: { certificate?: Certificate }) 
 
     const initialState: FormState = { message: null, errors: {} };
     const action = isEditing ? updateCertificate.bind(null, certificate.id) : createCertificate;
-    const [state, dispatch] = useFormState(action, initialState);
+    const [state, dispatch] = useActionState(action, initialState);
 
     const [aiModalOpen, setAiModalOpen] = useState(false);
     const [draftData, setDraftData] = useState<Certificate | null>(null);

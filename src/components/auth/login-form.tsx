@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useOptimistic } from 'react';
 import { useFormStatus } from 'react-dom';
 import { authenticate } from '@/lib/actions';
 import { Button } from '@/components/ui/button';
